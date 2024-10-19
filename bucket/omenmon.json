@@ -1,0 +1,19 @@
+{
+    "version": "0.61.1",
+    "description": "Monitor temperature and control fan speeds using WMI BIOS and the Embedded Controller.",
+    "homepage": "https://github.com/yanjing19989/OmenMon",
+    "license": "GPL-3.0",
+    "url": "https://github.com/yanjing19989/OmenMon/releases/download/1.1.1/OmenMon-1.1.1-Release.zip",
+    "bin": "OmenMon.exe",
+    "shortcuts": [
+        [
+            "OmenMon.exe",
+            "OmenMon"
+        ]
+    ],
+    "persist": "OmenMon.xml",
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/yanjing19989/OmenMon/releases/download/$version/OmenMon-$version-Release.zip"
+    }
+}

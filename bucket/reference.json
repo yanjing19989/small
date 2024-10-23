@@ -1,0 +1,20 @@
+{
+    "version": "20241022",
+    "description": "Share a quick reference checklist for developers.",
+    "homepage": "https://github.com/yanjing19989/reference/tree/gh-pages",
+    "license": " MIT license",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/yanjing19989/reference/archive/refs/heads/gh-pages.zip"
+        },
+        "32bit": {
+            "url": "https://github.com/yanjing19989/reference/archive/refs/heads/gh-pages.zip"
+        }
+    },
+    "shortcuts": [
+        [
+            "reference-gh-pages\\index.html",
+            "Quick Reference"
+        ]
+    ]
+}

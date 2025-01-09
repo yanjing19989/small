@@ -1,0 +1,34 @@
+{
+    "version": "2024.01",
+    "description": "mpv.net_CM的DW版本，定制了播放界面、右键菜单、缩略图、视频滤镜和着色器",
+    "homepage": "https://github.com/diana7127/mpv.net-DW",
+    "license": "",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/diana7127/mpv.net-DW/releases/download/v2024.01/mpv.net-DW_v2024.01_setup.exe#.7z"
+        }
+    },
+    "pre_install": [
+        "Move-Item \"$dir\\mpv.net-DW*\\*\" \"$dir\\\" | Out-Null",
+        "Remove-Item \"$dir\\mpv.net-DW*\" -Force -Recurse"
+    ],
+    "bin": "mpvnet.com",
+    "shortcuts": [
+        [
+            "mpvnet.exe",
+            "mpv.net"
+        ]
+    ],
+    "suggest": {
+        ".NET 6.0 Runtime": "versions/windowsdesktop-runtime-6.0"
+    },
+    "persist": "portable_config",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/diana7127/mpv.net-DW/releases/download/v$version/mpv.net-DW_v$version_setup.exe#.7z"
+            }
+        }
+    }
+}

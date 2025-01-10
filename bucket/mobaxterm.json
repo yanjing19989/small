@@ -19,7 +19,8 @@
         "@('MobaXterm backup.zip', 'MobaXterm.ini') | ForEach-Object { PersistsFile $_ }"
     ],
     "post_install": [
-        "Get-ChildItem \"$dir\"  'CygUtils.plugin' | Remove-Item"
+        "if ($architecture -eq '64bit') { Get-ChildItem \"$dir\"  'CygUtils.plugin' | Remove-Item }",
+        "elseif ($architecture -eq '32bit') { Get-ChildItem \"$dir\"  'CygUtils64.plugin' | Remove-Item }"
     ],
     "pre_uninstall": [
         "function UpdatesFile([string] $file) {",

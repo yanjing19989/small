@@ -5,13 +5,10 @@
     "license": "",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/diana7127/mpv.net-DW/releases/download/v2024.01/mpv.net-DW_v2024.01_setup.exe#.7z"
+            "url": "https://github.com/diana7127/mpv.net-DW/releases/download/v2024.01/mpv.net-DW_v2024.01_setup.exe#.7z",
+            "extract_dir": "mpv.net-DW v2024.01"
         }
     },
-    "pre_install": [
-        "Move-Item \"$dir\\mpv.net-DW*\\*\" \"$dir\\\" | Out-Null",
-        "Remove-Item \"$dir\\mpv.net-DW*\" -Force -Recurse"
-    ],
     "bin": "mpvnet.com",
     "shortcuts": [
         [
@@ -27,7 +24,8 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/diana7127/mpv.net-DW/releases/download/v$version/mpv.net-DW_v$version_setup.exe#.7z"
+                "url": "https://github.com/diana7127/mpv.net-DW/releases/download/v$version/mpv.net-DW_v$version_setup.exe#.7z",
+                "extract_dir": "mpv.net-DW v$version"
             }
         }
     }

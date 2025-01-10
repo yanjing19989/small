@@ -19,7 +19,10 @@
             "hash": ""
         }
     },
-    "pre_install": "",
+    "pre_install": [
+        "Move-Item \"$dir\\mpv.net-DW*\\*\" \"$dir\\\" | Out-Null",
+        "Remove-Item \"$dir\\mpv.net-DW*\" -Force -Recurse"
+    ],
     "installer": {
         "script": ""
     },

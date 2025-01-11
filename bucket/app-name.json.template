@@ -21,7 +21,13 @@
     },
     "pre_install": [
         "Move-Item \"$dir\\mpv.net-DW*\\*\" \"$dir\\\" | Out-Null",
-        "Remove-Item \"$dir\\mpv.net-DW*\" -Force -Recurse"
+        "Remove-Item \"$dir\\mpv.net-DW*\" -Force -Recurse",
+        "function PersistsFile([String] $file) {",
+        "    if (!(Test-Path \"$persist_dir\\$file\")) {",
+        "        New-Item \"$dir\\$file\" -Type File | Out-Null",
+        "    }",
+        "}",
+        "@('MobaXterm backup.zip', 'MobaXterm.ini') | ForEach-Object { PersistsFile $_ }"
     ],
     "installer": {
         "script": ""

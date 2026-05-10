@@ -1,0 +1,36 @@
+{
+    "version": "9.16",
+    "description": "NVEnc is a high performance encoder for NVIDIA GPUs supporting H.264/H.265/AV1 video encoding, optimized for Windows.",
+    "homepage": "https://github.com/rigaya/NVEnc",
+    "license": "MIT",
+    "notes": "Make sure your NVIDIA GPU/driver meets the encoder requirements.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/rigaya/NVEnc/releases/download/9.16/NVEncC_9.16_x64.7z",
+            "bin": [
+                "NVEncC64.exe"
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/rigaya/NVEnc/releases/download/9.16/NVEncC_9.16_Win32.7z",
+            "bin": [
+                "NVEncC.exe"
+            ]
+        }
+    },
+    "persist": "docs",
+    "checkver": {
+        "url": "https://github.com/rigaya/NVEnc/releases/latest",
+        "regex": "tag\\/([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_x64.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_Win32.7z"
+            }
+        }
+    }
+}

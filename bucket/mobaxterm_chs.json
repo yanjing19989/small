@@ -1,15 +1,21 @@
 {
-    "version": "24.3",
-    "description": "Enhanced terminal for Windows with X11 server, tabbed SSH client, network tools and much more.",
+    "version": "26.4",
+    "description": "Enhanced terminal for Windows with X11 server, tabbed SSH client, network tools and much more. (Simplified Chinese)",
     "homepage": "https://mobaxterm.mobatek.net/",
     "license": {
         "identifier": "Freeware",
         "url": "https://mobaxterm.mobatek.net/license.html"
     },
-    "url": "https://github.com/RipplePiam/MobaXterm-Chinese-Simplified/releases/download/v0.24.3.10/MobaXterm_Portable_v24.3_chs.zip",
+    "url": "https://github.com/Plan-Bi/MobaXterm-Simplified-Chinese-Patch-By-Codex/releases/download/v26.4/MobaXterm_Portable_v26.4.zip",
     "pre_install": [
+        "    # Flatten nested extraction directory",
+        "$nested = \"$dir\\MobaXterm_Portable_v26.4\"",
+        "if (Test-Path $nested) { Move-Item \"$nested\\*\" $dir -Force; Remove-Item $nested -Force }",
+        "    # Remove unneeded executables",
+        "Remove-Item \"$dir\\MobaXterm_Personal_26.4.exe\" -Force -ErrorAction SilentlyContinue",
+        "Remove-Item \"$dir\\MobaXterm_Personal_26.4_zh-CN.exe\" -Force -ErrorAction SilentlyContinue",
         "    # Rename executable",
-        "Get-ChildItem \"$dir\" 'mobaxterm*.exe' | Select-Object -First 1 | Rename-Item -NewName 'MobaXterm.exe'",
+        "Rename-Item \"$dir\\MobaXterm_Personal_26.4_zh-CN_self-rebuilt.exe\" 'MobaXterm.exe'",
         "    # Create files for persisting",
         "function PersistsFile([String] $file) {",
         "    if (!(Test-Path \"$persist_dir\\$file\")) {",
